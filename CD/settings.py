@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-&t%l87%c1%nt@qm=bu%6id42u0o*7)7synem)k_zubjs(gj(a2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["jang-api.onrender.com","localhost", "127.0.0.1"])
 
 
 # Application definition
@@ -140,7 +140,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+# Static & Media files
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR/"static"
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+# CORS
+CORS_ALLOWED_ORIGINS = env.list("ALLOWED_HOSTS", default=["http://localhost:3000"])
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
