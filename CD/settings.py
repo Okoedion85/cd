@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-&t%l87%c1%nt@qm=bu%6id42u0o*7)7synem)k_zubjs(gj(a2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["jang-api.onrender.com","localhost", "127.0.0.1"])
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["rest-y6sw.onrender.com","localhost", "127.0.0.1"])
 
 
 # Application definition
