@@ -148,6 +148,14 @@ STATIC_ROOT = BASE_DIR/"static"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
+# Email
+EMAIL_HOST = env("EMAIL_HOST", default="sandbox.smtp.mailtrap.io")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="")
+EMAIL_PORT = env.int("EMAIL_PORT", default=2525)
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=True)
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="webmaster@localhost")
+
 # CORS
 # CORS_ALLOWED_ORIGINS = env.list("ALLOWED_HOSTS", default=["http://localhost:3000"])
 CORS_ALLOWED_ORIGINS = [
